@@ -1,4 +1,3 @@
-using System;
 using Calculator.Models;
 using NUnit.Framework;
 
