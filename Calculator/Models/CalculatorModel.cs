@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Calculator.Models
 {
-    public class CalculatorModel
+    public class CalculatorModel :ICalculatorModel
     {
         public string LeftOperand { get; set; }
         public string RightOperand { get; set; }
@@ -40,31 +41,48 @@ namespace Calculator.Models
                 {
                     case "+":
                     {
-                        Result = (leftOperand + rightOperand).ToString();
+                        Result = checked(leftOperand + rightOperand).ToString();
                         break;
                     }
                     case "-":
                     {
-                        Result = (leftOperand - rightOperand).ToString();
+                        Result = checked(leftOperand - rightOperand).ToString();
                         break;
                     }
                     case "*":
                     {
-                        Result = (leftOperand * rightOperand).ToString();
+                        Result = checked(leftOperand * rightOperand).ToString();
                         break;
                     }
                     case "/":
                     {
-                        Result = (leftOperand / rightOperand).ToString();
+                        Result = checked(leftOperand / rightOperand).ToString();
                         break;
                     }
                 }
             }
-            catch
+            catch (Exception e)
             {
                 Result = "Calculation Error";
-                throw;
+                LeftOperand = string.Empty;
+                RightOperand = string.Empty;
+                Operation = string.Empty;
+                Trace.WriteLine($"Exception occured in {nameof(CalculateResult)}.");
+                Trace.WriteLine($"Exception Original Message: {e.Message}.");
+                Trace.WriteLine($"Exception Stack Trace: {e.StackTrace}.");
             }
+        }
+
+        public void ChangeLeftOperandSign()
+        {
+            
+            LeftOperand = (-1 * Int32.Parse(LeftOperand)).ToString();
+           
+        }
+
+        public void ChangeRightOperandSign()
+        {
+            RightOperand = (-1 * Int32.Parse(RightOperand)).ToString();
         }
     }
 }

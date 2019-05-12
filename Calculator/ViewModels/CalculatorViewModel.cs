@@ -13,12 +13,13 @@ namespace Calculator.ViewModels
     {
         #region Private members
 
-        private string display;
+        private string _display;
 
-        private CalculatorModel calculatorModel;
+        private ICalculatorModel _calculatorModel;
 
         private DelegateCommand<string> digitButtonPressCommand;
         private DelegateCommand<string> operationButtonPressCommand;
+        private DelegateCommand<string> positiveNegativePressCommand;
 
         #endregion
 
@@ -26,8 +27,14 @@ namespace Calculator.ViewModels
 
         public CalculatorViewModel()
         {
-            calculatorModel = new CalculatorModel();
-            display = "0";
+            this._calculatorModel = new CalculatorModel();
+            _display = "0";
+        }
+
+        public CalculatorViewModel(ICalculatorModel calculatorModel)
+        {
+            _calculatorModel = calculatorModel;
+            _display = "0";
         }
 
         #endregion
@@ -36,28 +43,28 @@ namespace Calculator.ViewModels
 
         public string LeftOperand
         {
-            get { return calculatorModel.LeftOperand; }
-            set { calculatorModel.LeftOperand = value; }
+            get { return _calculatorModel.LeftOperand; }
+            set { _calculatorModel.LeftOperand = value; }
         }
 
         public string RightOperand
         {
-            get { return calculatorModel.RightOperand; }
-            set { calculatorModel.RightOperand = value; }
+            get { return _calculatorModel.RightOperand; }
+            set { _calculatorModel.RightOperand = value; }
         }
 
         public string Operation
         {
-            get { return calculatorModel.Operation; }
-            set { calculatorModel.Operation = value; }
+            get { return _calculatorModel.Operation; }
+            set { _calculatorModel.Operation = value; }
         }
 
         public string Display
         {
-            get { return display; }
+            get { return _display; }
             set
             {
-                display = value;
+                _display = value;
                 OnPropertyChanged("Display");
             }
         }
@@ -93,6 +100,30 @@ namespace Calculator.ViewModels
                     LeftOperand = string.Empty;
                     RightOperand = string.Empty;
                     Operation = string.Empty;
+                    break;
+                }
+                case "BACKSPACE":
+                {
+                    if (Operation != string.Empty && RightOperand == string.Empty)
+                    {
+                        Operation = string.Empty;
+                        Display = LeftOperand;
+                    }
+                    else if (Operation != string.Empty && RightOperand != string.Empty)
+                    {
+                        RightOperand = RightOperand.Remove(RightOperand.Length - 1);
+                        Display = LeftOperand + Operation + RightOperand;
+                    }
+                    else if (LeftOperand != string.Empty)
+                    {
+                        LeftOperand = LeftOperand.Remove(LeftOperand.Length - 1);
+                        if (LeftOperand != string.Empty)
+                            Display = LeftOperand;
+                        else
+                        {
+                            Display = "0";
+                        }
+                    }
                     break;
                 }
                 default:
@@ -134,90 +165,123 @@ namespace Calculator.ViewModels
 
         public void OperationButtonPress(string button)
         {
-            switch (button)
+            if (LeftOperand != string.Empty)
             {
-                case "+":
+                switch (button)
                 {
-                    if (RightOperand != string.Empty)
+                    case "+":
                     {
-                        calculatorModel.CalculateResult();
-                        Operation = "+";
-                        LeftOperand = calculatorModel.Result;
-                        RightOperand = String.Empty;
+                        if (RightOperand != string.Empty)
+                        {
+                            _calculatorModel.CalculateResult();
+                            Operation = "+";
+                            LeftOperand = _calculatorModel.Result;
+                            RightOperand = String.Empty;
+                        }
+                        else
+                        {
+                            Operation = "+";
+                        }
                         Display = LeftOperand + Operation;
+                        break;
                     }
-                    else
+                    case "-":
                     {
-                        Operation = "+";
-                        Display = Display + Operation;
-                    }
-                    break;
-                }
-                case "-":
-                {
-                    if (RightOperand != string.Empty)
-                    {
-                        calculatorModel.CalculateResult();
-                        Operation = "-";
-                        LeftOperand = calculatorModel.Result;
-                        RightOperand = String.Empty;
+                        if (RightOperand != string.Empty)
+                        {
+                            _calculatorModel.CalculateResult();
+                            Operation = "-";
+                            LeftOperand = _calculatorModel.Result;
+                            RightOperand = String.Empty;
+                        }
+                        else
+                        {
+                            Operation = "-";
+                        }
                         Display = LeftOperand + Operation;
+                        break;
                     }
-                    else
+                    case "*":
                     {
-                        Operation = "-";
-                        Display = Display + Operation;
-                    }
-                    break;
-                }
-                case "*":
-                {
-                    if (RightOperand != string.Empty)
-                    {
-                        calculatorModel.CalculateResult();
-                        Operation = "*";
-                        LeftOperand = calculatorModel.Result;
-                        RightOperand = String.Empty;
+                        if (RightOperand != string.Empty)
+                        {
+                            _calculatorModel.CalculateResult();
+                            Operation = "*";
+                            LeftOperand = _calculatorModel.Result;
+                            RightOperand = String.Empty;
+                        }
+                        else
+                        {
+                            Operation = "*";
+                        }
                         Display = LeftOperand + Operation;
+                        break;
                     }
-                    else
+                    case "/":
                     {
-                        Operation = "*";
-                        Display = Display + Operation;
-                    }
-                    break;
-                }
-                case "/":
-                {
-                    if (RightOperand != string.Empty)
-                    {
-                        calculatorModel.CalculateResult();
-                        Operation = "/";
-                        LeftOperand = calculatorModel.Result;
-                        RightOperand = String.Empty;
+                        if (RightOperand != string.Empty)
+                        {
+                            _calculatorModel.CalculateResult();
+                            Operation = "/";
+                            LeftOperand = _calculatorModel.Result;
+                            RightOperand = String.Empty;
+                        }
+                        else
+                        {
+                            Operation = "/";
+                        }
                         Display = LeftOperand + Operation;
+                        break;
                     }
-                    else
+                    case "=":
                     {
-                        Operation = "/";
-                        Display = Display + Operation;
+                        if (RightOperand != string.Empty)
+                        {
+                            _calculatorModel.CalculateResult();
+                            Operation = string.Empty;
+                            LeftOperand = _calculatorModel.Result;
+                            RightOperand = String.Empty;
+                            Display = LeftOperand;
+                        }
+                        break;
                     }
-                    break;
+                    default:
+                        throw new ArgumentException();
                 }
-                case "=":
-                {
-                    if (RightOperand != string.Empty)
-                    {
-                        calculatorModel.CalculateResult();
-                        Operation = string.Empty;
-                        LeftOperand = calculatorModel.Result;
-                        RightOperand = String.Empty;
-                        Display = LeftOperand;
-                    }
-                    break;
-                }
-                default:
-                    throw new ArgumentException();
+            }
+        }
+
+        #endregion
+
+        #region Positive/Negative Buttons Press
+
+        public ICommand PositiveNegativePressCommand
+        {
+            get
+            {
+                if (positiveNegativePressCommand == null)
+                    positiveNegativePressCommand =
+                        new DelegateCommand<string>(PositiveNegativeButtonPress, CanPositiveNegativeButtonPress);
+                return positiveNegativePressCommand;
+            }
+        }
+
+        private bool CanPositiveNegativeButtonPress(string button)
+        {
+            return (LeftOperand != string.Empty && Operation == string.Empty) || (RightOperand != string.Empty);
+        }
+
+        public void PositiveNegativeButtonPress(string button)
+        {
+            if (LeftOperand != string.Empty && Operation == string.Empty)
+            {
+                _calculatorModel.ChangeLeftOperandSign();
+                Display = LeftOperand;
+            }
+            else if (RightOperand != string.Empty)
+            {
+                _calculatorModel.ChangeRightOperandSign();
+                Display = LeftOperand + Operation + RightOperand; 
             }
         }
 

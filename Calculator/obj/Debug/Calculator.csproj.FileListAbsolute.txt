@@ -1,7 +1,6 @@
 C:\Users\Sergey\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe.config
 C:\Users\Sergey\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe
 C:\Users\Sergey\source\repos\Calculator\Calculator\bin\Debug\Calculator.pdb
-C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\App.g.cs
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.cache
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.lref

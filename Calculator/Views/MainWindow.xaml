@@ -45,9 +45,9 @@
         <Button  x:Name="btnEqual" Command="{Binding OperationButtonPressCommand}" CommandParameter="=" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2">=</Button>
         <!-- Clear Buttons-->
         <Button  x:Name="btnClearEntry" Command="{Binding DigitButtonPressCommand}" CommandParameter="CLEAR" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">CLEAR</Button>
-        <Button  x:Name="btnBackspace" Command="{Binding DigitButtonPressCommand}" CommandParameter="BACKSPACE" Grid.Row="1" Grid.Column="2" Content="&lt;="></Button>
+        <Button  x:Name="btnBackspace" Command="{Binding DigitButtonPressCommand}" CommandParameter="BACKSPACE" Grid.Row="1" Grid.Column="2" Content="&lt;-"></Button>
         <!-- Positive/Negative Button-->
-        <Button  x:Name="btnPositiveNegative" Grid.Row="5" Grid.Column="0">+-</Button>
+        <Button  x:Name="btnPositiveNegative" Command ="{Binding PositiveNegativePressCommand}" Grid.Row="5" Grid.Column="0">+-</Button>
         <!-- Display Textbox-->
         <TextBox x:Name="txtDisplay" 
                  Text ="{Binding Path=Display}"

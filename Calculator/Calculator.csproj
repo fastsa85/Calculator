@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Models\CalculatorModel.cs" />
+    <Compile Include="Models\ICalculatorModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CalculatorViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
