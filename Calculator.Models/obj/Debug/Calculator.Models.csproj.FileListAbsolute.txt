@@ -1,0 +1,5 @@
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Models\bin\Debug\Calculator.Models.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Models\bin\Debug\Calculator.Models.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Models\obj\Debug\Calculator.Models.csproj.CoreCompileInputs.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Models\obj\Debug\Calculator.Models.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Models\obj\Debug\Calculator.Models.pdb

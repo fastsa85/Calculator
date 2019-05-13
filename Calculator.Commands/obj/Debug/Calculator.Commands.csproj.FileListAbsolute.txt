@@ -1,0 +1,5 @@
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Commands\obj\Debug\Calculator.Commands.csproj.CoreCompileInputs.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Commands\bin\Debug\Calculator.Commands.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Commands\bin\Debug\Calculator.Commands.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Commands\obj\Debug\Calculator.Commands.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator.Commands\obj\Debug\Calculator.Commands.pdb

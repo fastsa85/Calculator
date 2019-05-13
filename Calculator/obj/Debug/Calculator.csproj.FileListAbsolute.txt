@@ -13,3 +13,25 @@ C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\Views\MainWindow.baml
 C:\Users\Sergey\source\repos\Calculator\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Views\MainWindow.g.cs
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\App.g.cs
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.lref
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Views\MainWindow.baml
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.g.resources
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.ViewModels.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.Models.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.Commands.dll
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.ViewModels.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.Models.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\bin\Debug\Calculator.Commands.pdb
+C:\Users\sfast\Desktop\New folder (5)\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyComplete
